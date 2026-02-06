@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 
 import { RoleGuard } from "@/components/auth";
+import PageHeader from "@/components/layout/page-header";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -64,10 +65,10 @@ export default function ProfilePage() {
           <Button variant="ghost" size="icon" onClick={() => router.back()}>
             <ArrowLeft className="h-4 w-4" />
           </Button>
-          <div>
-            <h1 className="text-3xl font-bold">Profile</h1>
-            <p className="text-gray-600">View your account information</p>
-          </div>
+          <PageHeader
+            title="My Profile"
+            description="View and manage your profile information"
+          />
         </div>
 
         {role === "HR" ? (
